@@ -1,0 +1,13 @@
+<h1>Welcome !</h1>
+<p>Ceci un test <%= @variable %></p>
+
+
+<% if @variable == 15 %>
+	Waouhhhh ! Trop fort !
+<% else %>
+	Waouhhh ! Tes nul !
+<% end %>
+
+<% @variable.times do |i| %>
+	<%= i %>
+<% end %>
