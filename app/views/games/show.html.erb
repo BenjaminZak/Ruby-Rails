@@ -1,10 +1,12 @@
 <h1><%= @game.title %></h1>
 	<%= form_tag "/games/#{@game.id}", method: "patch" do %>
 	  <input type="text" name="title" value="<%= @game.title %>" />
+	  <p><%= @game.errors[:title].first %></p>
 	  <input type="submit" value="Modifier le jeu" />
 	<% end %>
-<p><a href="/games">Retourner à l'index</a></p>
 
 <%= form_tag "/games/#{@game.id}", method: "delete" do %>
   <input type="submit" value="Supprimer le jeu" />
 <% end %>
+
+<p><a href="/games">Retourner à l'index</a></p>

@@ -10,8 +10,12 @@ class GamesController < ApplicationController
   	@game = Game.find(params[:id])
   end
   def update
-    Game.find(params[:id]).update title: params[:title]
-    redirect_to "/games/#{params[:id]}"
+    @game = Game.find(params[:id])
+    if @game.update title: params[:title]
+      redirect_to "/games/#{params[:id]}"
+    else
+      render "show"
+    end
   end
   def destroy
     Game.find(params[:id]).destroy
